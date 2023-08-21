@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App | 2023</title>
+    <link href="style.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="header">
+        <nav class="nav">
+            <h1>TODO</h1>
+            <div id="icon">
+
+            </div>
+            <script>
+                let darkmode = false
+                document.getElementById("icon").innerHTML = `<i class='bx bx-moon' ></i>`
+                document.getElementById("icon").addEventListener("click", ()=>{
+                     darkmode = (!darkmode)
+                     document.getElementById("icon").innerHTML =(darkmode) ? `<i class='bx bx-sun'></i>` : `<i class='bx bx-moon' ></i>`
+                     var element = document.body;
+                     element.classList.toggle("darkmode")
+                    document.getElementById("input").classList.toggle("input-dark")
+                    document.getElementById("items").classList.toggle("input-dark")
+                })
+                
+            </script>
+            
+        </nav>
+        <input type="text" placeholder="Create a todo" class="todo-input" id="input">
+        <button class="add-btn" id="add-btn">Add</button>
+    </div>
+
+    <p class="shalaye">Click the checkbox to mark as completed and double click the cancel icon to remove from todos</p>
+    <div class="todos" id="items">
+        
+        <!-- <hr>
+        <div class="todo-footer">
+            <p>5 items left</p>
+            <p>Clear Completed</p>
+        </div> -->
+    </div>
+    <!-- <div class="todo-footer-inner">
+        <p>All</p>
+        <p>Active</p>
+        <p>Completed</p>
+    </div> -->
+    <script src="index.js"></script>
+</body>
+</html>
